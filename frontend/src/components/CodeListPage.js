@@ -8,7 +8,7 @@ const CodeListPage = () => {
 
   useEffect(() => {
     // API 호출
-    fetch('http://localhost:8080/api/images')
+    fetch('http://34.226.197.108:8080/api/images')
       .then(response => response.json())
       .then(data => {
         setImages(data);  // 이미지 데이터 저장
