@@ -36,7 +36,7 @@ const CodeListPage = () => {
           images.map((image) => (
             <div key={image.id} className="image-item">
               <img 
-                src={`http://localhost:8080${image.imageUrl}`} 
+                src={`http://54.242.36.99:8080${image.imageUrl}`} 
                 alt={`Image ${image.id}`} 
                 className="image" 
               />
