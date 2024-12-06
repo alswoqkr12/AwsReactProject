@@ -41,7 +41,7 @@ function CrosshairUpload() {
         formData.append("image", image);
     
         try {
-            const response = await axios.post("http://54.242.36.99:8080/api/crosshairs", formData, {
+            const response = await axios.post("http://98.82.41.70:8080/api/crosshairs", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },

@@ -13,7 +13,7 @@ function LoginPage() {
 
         try {
             // 로그인 API 호출
-            const response = await axios.post("http://54.242.36.99:8080/api/auth/login", {
+            const response = await axios.post("http://98.82.41.70:8080/api/auth/login", {
                 username,
                 password,
             });

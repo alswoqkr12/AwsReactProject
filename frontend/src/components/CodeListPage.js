@@ -8,7 +8,7 @@ const CodeListPage = () => {
 
   useEffect(() => {
     // API 호출
-    fetch('http://54.242.36.99:8080/api/images')
+    fetch('http://98.82.41.70:8080/api/images')
       .then(response => response.json())
       .then(data => {
         setImages(data);  // 이미지 데이터 저장
@@ -36,7 +36,7 @@ const CodeListPage = () => {
           images.map((image) => (
             <div key={image.id} className="image-item">
               <img 
-                src={`http://54.242.36.99:8080${image.imageUrl}`} 
+                src={`http://98.82.41.70:8080${image.imageUrl}`} 
                 alt={`Image ${image.id}`} 
                 className="image" 
               />
