@@ -11,7 +11,7 @@ const CodeListPage = () => {
     fetch('http://98.82.41.70:8080/api/images')
       .then(response => response.json())
       .then(data => {
-        setImages(data);  // 이미지 데이터 저장
+	setImages(data);  // 이미지 데이터 저장
         setIsLoading(false);  // 로딩 상태 false로 변경
       })
       .catch(error => {
@@ -36,7 +36,7 @@ const CodeListPage = () => {
           images.map((image) => (
             <div key={image.id} className="image-item">
               <img 
-                src={`http://98.82.41.70:8080${image.imageUrl}`} 
+                src={`http://98.82.41.70:8080/images/${image.imageUrl}`} 
                 alt={`Image ${image.id}`} 
                 className="image" 
               />
