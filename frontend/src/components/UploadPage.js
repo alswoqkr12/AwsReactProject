@@ -37,7 +37,7 @@ function CrosshairUpload() {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        // const formData = new FormData();
+        const formData = new FormData();
 
         // const s3 = new AWS.S3({
         //     region: s3Config.region,
