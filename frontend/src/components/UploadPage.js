@@ -12,12 +12,12 @@ function CrosshairUpload() {
     const [imagePreview, setImagePreview] = useState('');
     const fileInputRef = useRef(null);
 
-    const s3Config = {
-        region: "us-east-1",
-        accessKeyId: "ASIA42VF4SW7I7OVH6UW",
-        secretAccessKey: "TYHNAAfD33lJRA1mcb0OOH4c4JOvPiPEe74biM9+",
-        bucketName: "aws-cross",
-      };
+    // const s3Config = {
+    //     region: "us-east-1",
+    //     accessKeyId: "ASIA42VF4SW7I7OVH6UW",
+    //     secretAccessKey: "TYHNAAfD33lJRA1mcb0OOH4c4JOvPiPEe74biM9+",
+    //     bucketName: "aws-cross",
+    //   };
 
 
   // 파일이 변경되었을 때 호출되는 함수
@@ -37,35 +37,35 @@ function CrosshairUpload() {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        const formData = new FormData();
+        // const formData = new FormData();
 
-        const s3 = new AWS.S3({
-            region: s3Config.region,
-            accessKeyId: s3Config.accessKeyId,
-            secretAccessKey: s3Config.secretAccessKey,
-          });
+        // const s3 = new AWS.S3({
+        //     region: s3Config.region,
+        //     accessKeyId: s3Config.accessKeyId,
+        //     secretAccessKey: s3Config.secretAccessKey,
+        //   });
 
-        const params = {
-            Bucket: s3Config.bucketName,
-            Key: `${name}`,
-            Body: image,
-            ContentType: image.type,
-        };
+        // const params = {
+        //     Bucket: s3Config.bucketName,
+        //     Key: `${name}`,
+        //     Body: image,
+        //     ContentType: image.type,
+        // };
 
-        try {
-            const data = await s3.upload(params).promise();
+        // try {
+        //     const data = await s3.upload(params).promise();
             
-            formData.append("name", name);
-            formData.append("description", description);
-            formData.append("code", code);
-            formData.append("image", data.location);
-          } catch (error) {
-            console.error(`Error uploading`, error);
-            throw error;
-          }
+        //     formData.append("name", name);
+        //     formData.append("description", description);
+        //     formData.append("code", code);
+        //     formData.append("image", data.location);
+        //   } catch (error) {
+        //     console.error(`Error uploading`, error);
+        //     throw error;
+        //   }
 
         try {
-            const response = await axios.post("http://localhost:8080/api/crosshairs", formData);
+            const response = await axios.post("http://98.82.41.70:8080/api/crosshairs", formData);
             // 성공적으로 업로드 되었을 때 alert로 메시지 출력
             alert("Upload Sucsess");
             setName("");
